@@ -1,2 +1,4 @@
-const JWT_SECRET = "123456789";
-module.exports = JWT_SECRET;
+//backend/config.js
+module.exports = {
+	JWT_SECRET: "123456789"
+}
