@@ -131,3 +131,5 @@ dist
 
 *.zip
 *.zip *.gz
+
+config.js
