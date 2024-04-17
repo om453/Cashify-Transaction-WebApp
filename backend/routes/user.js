@@ -78,6 +78,7 @@ router.post("/signin", async (req, res) => {
         password: req.body.password
     });
 
+    // If the user is found, generate a token
     if (user) {
         const token = jwt.sign({
             userId: user._id
@@ -96,7 +97,7 @@ router.post("/signin", async (req, res) => {
 })
 
 
-//* other auth routes
+//* for update the user data 
 const updateBody = zod.object({
 	password: zod.string().optional(),
     firstName: zod.string().optional(),

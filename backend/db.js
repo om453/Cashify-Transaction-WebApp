@@ -1,9 +1,10 @@
 // backend/db.js
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 // mIZMsmFgVChlWZyO
 // mongodb+srv://om123:<password>@cluster0.o6azof0.mongodb.net/
-mongoose.connect("mongodb+srv://om123:mIZMsmFgVChlWZyO@cluster0.o6azof0.mongodb.net/Cashify")
+mongoose.connect(process.env.MONGODB_URI)
 
 // Create a Schema for Users
 const userSchema = new mongoose.Schema({
@@ -35,7 +36,9 @@ const userSchema = new mongoose.Schema({
     }
 });
 
+const User = mongoose.model('User', userSchema);
 
+// Create a Schema for Accounts
 const accountSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId, // Reference to User model
@@ -49,9 +52,7 @@ const accountSchema = new mongoose.Schema({
 })
 
 
-// Create a model from the schema
 const Account = mongoose.model('Account', accountSchema);
-const User = mongoose.model('User', userSchema);
 
 
 module.exports = {

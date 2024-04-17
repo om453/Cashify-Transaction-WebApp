@@ -6,6 +6,7 @@ const { default: mongoose } = require('mongoose');
 
 const router = express.Router();
 
+// Fetch the account balance
 router.get("/balance", authMiddleware, async (req, res) => {
     const account = await Account.findOne({
         userId: req.userId
@@ -16,6 +17,7 @@ router.get("/balance", authMiddleware, async (req, res) => {
     })
 });
 
+// Transfer money between accounts
 router.post("/transfer", authMiddleware, async (req, res) => {
     const session = await mongoose.startSession();
 
