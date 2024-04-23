@@ -2,8 +2,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// mIZMsmFgVChlWZyO
-// mongodb+srv://om123:<password>@cluster0.o6azof0.mongodb.net/
+
 mongoose.connect(process.env.MONGODB_URI)
 
 // Create a Schema for Users

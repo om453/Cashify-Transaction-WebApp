@@ -49,7 +49,7 @@ router.post("/signup", async (req, res) => {
 
     const token = jwt.sign({
         userId
-    }, JWT_SECRET);
+    }, process.env.JWT_SECRET);
 
     res.json({
         message: "User created successfully",
