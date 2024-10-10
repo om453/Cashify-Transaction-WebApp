@@ -4,6 +4,7 @@ Cashify is an end-to-end payment wallet clone built using the MERN stack (MongoD
 
 ## Setup
 
+
 ### Backend
 
 1. Navigate to the backend directory - `cd backend`
